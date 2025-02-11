@@ -3,6 +3,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { AuthContext } from '../../Providers/AuthProviders';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 const Login = () => {
     const [disable, setDisable] = useState(true);
@@ -104,7 +105,9 @@ const Login = () => {
                             <input disabled={disable} className="btn btn-primary" type="submit" value="Login" />
                         </div>
                     </form>
-                    <p><small>Don't have an account? <Link to="/register">Register</Link></small></p>
+                    <p className='px-6'><small>Don't have an account? <Link to="/signup">Register</Link></small></p>
+
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
